@@ -5,6 +5,7 @@ const DBConnection = require("./db/dbConnection");
 const authRoute = require('./routes/auth')
 const userRoute = require('./routes/user')
 const moviesRoute = require('./routes/movies')
+const listRoute = require('./routes/list')
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -12,6 +13,7 @@ app.use(express.json())
 app.use('/api/auth', authRoute)
 app.use('/api/user', userRoute)
 app.use('/api/movies', moviesRoute)
+app.use('/api/list', listRoute)
 
 try {
     DBConnection();
